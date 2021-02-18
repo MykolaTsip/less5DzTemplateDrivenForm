@@ -1,0 +1,88 @@
+
+<!--&lt;!&ndash;1&ndash;&gt;-->
+<!--<div>-->
+<!--  <div>-->
+<!--    <input type="text" [(ngModel)]="title" (input)="logTitle()">-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;2&ndash;&gt;-->
+<!--<div>-->
+<!--  <div>-->
+<!--    <input type="text" [(ngModel)]="text">-->
+<!--    <button (click)="showText()">log text</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;3&ndash;&gt;-->
+<!--<div>-->
+<!--  <div>-->
+<!--    <input type="number" [(ngModel)]="id" #userId>-->
+<!--  </div>-->
+<!--  <button (click)="showUser(userId)">show user</button>-->
+<!--</div>-->
+<!--<div *ngIf="user">-->
+<!--  {{user | json}}-->
+<!--</div>-->
+
+
+
+<!--&lt;!&ndash;4&ndash;&gt;-->
+<!--<div>-->
+<!--  <div>-->
+<!--    <input type="text" [(ngModel)]="name" #userName="ngModel">-->
+<!--  </div>-->
+<!--    <button (click)="showUsersByName(userName)">show users</button>-->
+<!--</div>-->
+<!--<div *ngIf="user">-->
+<!--  <div *ngFor="let u of user">-->
+<!--    {{u | json}}-->
+<!--    <hr>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash;5&ndash;&gt;-->
+<!--<div>-->
+<!--  <div>-->
+<!--    <input type="number" [(ngModel)]="user.id" #usrId="ngModel" required="required">-->
+<!--  </div>-->
+<!--  <div *ngIf="usrId.untouched || !usrId.valid">-->
+<!--    обов'язкове поле-->
+<!--  </div>-->
+<!--  <div>-->
+<!--  <input type="text" [(ngModel)]="user.username" #usrName="ngModel" required="required">-->
+<!--  </div>-->
+<!--  <div *ngIf="usrName.untouched || !usrName.valid">-->
+<!--    обов'язкове поле-->
+<!--  </div>-->
+<!--  <button (click)="showCustomer(usrId, usrName)" [disabled]="!usrId.valid || !usrName.valid">show customers</button>-->
+<!--</div>-->
+<!--<div *ngIf="users">-->
+<!--<div *ngFor="let u of users">-->
+<!--  {{u | json}}-->
+<!--</div>-->
+<!--</div>-->
+
+
+
+<!--6-->
+<form #forma="ngForm" (ngSubmit)="formaBit(name.value, username.value, numb.value, forma)">
+  <div>
+    <input type="text" name="name" #name required>
+  </div>
+  <br>
+  <div>
+    <input type="text" name="username" #username required>
+  </div>
+  <div>
+    <input type="number" name="numb" #numb required>
+  </div>
+
+  <button>click</button>
+</form>
+<div *ngIf="forma.valid">
+  {{name.value}} - {{username.value}} - {{numb.value}}
+</div>
